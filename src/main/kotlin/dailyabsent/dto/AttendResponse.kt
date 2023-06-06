@@ -6,7 +6,11 @@ data class AttendResponse(val memberId: Long, val memberName: String, val attend
 
     companion object {
         fun from(attendanceRecord: AttendanceRecord): AttendResponse {
-            return AttendResponse(attendanceRecord.member.id!!, attendanceRecord.member.name, attendanceRecord.attendanceCode.code)
+            return AttendResponse(
+                attendanceRecord.member.id!!,
+                attendanceRecord.member.name,
+                attendanceRecord.attendanceCode.code
+            )
         }
     }
 }

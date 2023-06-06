@@ -9,7 +9,6 @@ enum class AttendanceCode(val code: Int) {
     LATE(2);
 
     companion object {
-
         fun from(code: Int): AttendanceCode {
             return values().firstOrNull() { it.code == code }
                 ?: throw AttendanceCodeNotFoundException()
