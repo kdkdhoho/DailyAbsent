@@ -10,8 +10,4 @@ data class AttendanceRecord(
 ) {
 
     constructor(member: Member, attendanceCode: AttendanceCode) : this(null, member, attendanceCode, null)
-
-//    private val date: LocalDate
-
-//    constructor(memberId: Long, attendanceCode: AttendanceCode) : this(null, memberId, attendanceCode, this.date = LocalDate.now())
 }
