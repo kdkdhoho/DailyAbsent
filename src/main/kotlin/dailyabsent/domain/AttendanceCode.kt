@@ -1,6 +1,6 @@
 package dailyabsent.domain
 
-import java.lang.IllegalArgumentException
+import dailyabsent.exception.AttendanceCodeNotFoundException
 
 enum class AttendanceCode(val code: Int) {
 
@@ -12,7 +12,7 @@ enum class AttendanceCode(val code: Int) {
 
         fun from(code: Int): AttendanceCode {
             return values().firstOrNull() { it.code == code }
-                ?: throw IllegalArgumentException("error")
+                ?: throw AttendanceCodeNotFoundException()
         }
     }
 }
