@@ -6,17 +6,12 @@ import dailyabsent.domain.Member
 import org.springframework.jdbc.core.BatchPreparedStatementSetter
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert
 import org.springframework.stereotype.Repository
 import java.sql.PreparedStatement
 import java.time.LocalDate
 
 @Repository
 class AttendanceRecordDao(private val jdbcTemplate: JdbcTemplate) {
-
-    private val simpleJdbcInsert: SimpleJdbcInsert = SimpleJdbcInsert(jdbcTemplate)
-        .withTableName("attendance_record")
-        .usingGeneratedKeyColumns("id")
 
     private val rowMapper: RowMapper<AttendanceRecord> = RowMapper { rs, _ ->
         AttendanceRecord(
